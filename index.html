@@ -212,6 +212,9 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
         // Simple mobile menu toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
@@ -273,6 +276,44 @@
                 currentSlide = maxSlides;
             }
             updateSlider();
+        });
+
+        // --- LENIS SMOOTH SCROLL ---
+        const lenis = new Lenis({
+            lerp: 0.15,          // Makes the easing snap faster
+            wheelMultiplier: 1.8 // Makes scrolling faster per wheel motion
+        });
+
+        // --- GSAP TEXT ANIMATIONS ---
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Sync Lenis scroll with ScrollTrigger
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+
+        // Select all text elements across the page
+        const textElements = document.querySelectorAll('h1, h2, h3, h4, p, label, .filter-label, .btn-outline, .submit-btn');
+
+        // Apply a generic synchronized scroll animation to all texts
+        textElements.forEach(text => {
+            // Set initial state via GSAP
+            gsap.set(text, { autoAlpha: 0, y: 50 });
+
+            // Create ScrollTrigger animation
+            gsap.to(text, {
+                scrollTrigger: {
+                    trigger: text,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse' // Play on scroll down, reverse on scroll up
+                },
+                y: 0,
+                autoAlpha: 1,
+                duration: 0.8,
+                ease: 'power3.out'
+            });
         });
     </script>
 </body>
