@@ -108,17 +108,17 @@ h2 {
 }
 
 .hero-content {
-    max-width: 500px;
+    max-width: 630px;
     text-align: left;
 }
 
 .main-logo {
-    width: 280px;
+    width: 330px;
     margin-bottom: 2rem;
 }
 
 .hero-content h1 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     font-weight: 700;
     line-height: 1.2;
     color: var(--text-dark);
@@ -218,16 +218,40 @@ h2 {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
+    position: relative;
 }
 
 .brand-card:hover {
     transform: translateY(-5px);
 }
 
-.brand-card img {
+.brand-image-wrapper {
+    position: relative;
     width: 100%;
-    aspect-ratio: 1.4;
+}
+
+.brand-image-wrapper .brand-bg {
+    width: 100%;
+    aspect-ratio: 1.1;
     object-fit: cover;
+    max-height: 300px;
+    display: block;
+}
+
+.brand-image-wrapper .brand-logo-floating {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    max-width: 250px;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.4));
+}
+
+.brand-card:hover .brand-logo-floating {
+    transform: translate(-50%, -10px) scale(1.05);
 }
 
 .brand-info {
@@ -394,7 +418,7 @@ h2 {
 
 .contact-left h2 {
     color: var(--text-dark);
-    font-size: 4rem;
+    font-size: 2.7rem;
     line-height: 0.9;
     font-weight: 800;
     margin-bottom: 4rem;
@@ -752,7 +776,7 @@ h2 {
 }
 
 .ip-about-left p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--dark-charcoal);
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -769,27 +793,32 @@ h2 {
     .ip-hero {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 3vw));
     }
+
     .ip-trailer {
         clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0 calc(100% - 3vw));
     }
+
     .ip-about {
         clip-path: polygon(0 0, 100% 3vw, 100% 100%, 0 100%);
     }
 
-    .ip-hero-grid, .ip-about-grid {
+    .ip-hero-grid,
+    .ip-about-grid {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .ip-social-links {
         justify-content: center;
     }
-    
+
     .ip-hero-left h1 {
         font-size: 2.5rem;
     }
 
-    .ip-hero, .ip-trailer, .ip-about {
+    .ip-hero,
+    .ip-trailer,
+    .ip-about {
         padding-top: 4rem;
         padding-bottom: 6rem;
     }

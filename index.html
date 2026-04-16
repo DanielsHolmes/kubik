@@ -75,42 +75,65 @@
 
             <div class="brand-grid">
                 <div class="brand-card">
-                    <img src="kubik img/OrbEdz.png" alt="OrbEdz">
+                    <div class="brand-image-wrapper">
+                        <img src="kubik img/OrbEdz.png" alt="OrbEdz Background" class="brand-bg">
+                        <img src="kubick logos brands/OrbEdz Logo 1.png" alt="OrbEdz Logo" class="brand-logo-floating">
+                    </div>
                     <div class="brand-info">
                         <h3>OrbEdz</h3>
                         <a href="#" class="btn-outline">LEARN MORE</a>
                     </div>
                 </div>
                 <div class="brand-card">
-                    <img src="kubik img/Street Fleet.png" alt="Street Fleet">
+                    <div class="brand-image-wrapper">
+                        <img src="kubik img/Street Fleet.png" alt="Street Fleet Background" class="brand-bg">
+                        <img src="kubick logos brands/Street Fleet Logo 1.png" alt="Street Fleet Logo"
+                            class="brand-logo-floating">
+                    </div>
                     <div class="brand-info">
                         <h3>Street Fleet</h3>
                         <a href="#" class="btn-outline">LEARN MORE</a>
                     </div>
                 </div>
                 <div class="brand-card">
-                    <img src="kubik img/Mini Motor Bugs.png" alt="Mini Motor Bugs">
+                    <div class="brand-image-wrapper">
+                        <img src="kubik img/Mini Motor Bugs.png" alt="Mini Motor Bugs Background" class="brand-bg">
+                        <img src="kubick logos brands/Mini Motor Bugs Logo 1.png" alt="Mini Motor Bugs Logo"
+                            class="brand-logo-floating">
+                    </div>
                     <div class="brand-info">
                         <h3>Mini Motor Bugs</h3>
                         <a href="mini-motor-bugs.html" class="btn-outline">LEARN MORE</a>
                     </div>
                 </div>
                 <div class="brand-card">
-                    <img src="kubik img/Veggie Vee.png" alt="Veggie Vee">
+                    <div class="brand-image-wrapper">
+                        <img src="kubik img/Veggie Vee.png" alt="Veggie Vee Background" class="brand-bg">
+                        <img src="kubick logos brands/Veggie Vee Logo 1.png" alt="Veggie Vee Logo"
+                            class="brand-logo-floating">
+                    </div>
                     <div class="brand-info">
                         <h3>Veggie Vee</h3>
                         <a href="#" class="btn-outline">LEARN MORE</a>
                     </div>
                 </div>
                 <div class="brand-card">
-                    <img src="kubik img/The Fisher Twinz.png" alt="The Fisher Twinz">
+                    <div class="brand-image-wrapper">
+                        <img src="kubik img/The Fisher Twinz.png" alt="The Fisher Twinz Background" class="brand-bg">
+                        <img src="kubick logos brands/The Fisher Twinz Logo 1.png" alt="The Fisher Twinz Logo"
+                            class="brand-logo-floating">
+                    </div>
                     <div class="brand-info">
                         <h3>The Fisher Twinz</h3>
                         <a href="#" class="btn-outline">LEARN MORE</a>
                     </div>
                 </div>
                 <div class="brand-card">
-                    <img src="kubik img/Devicez.png" alt="Devicez">
+                    <div class="brand-image-wrapper">
+                        <img src="kubik img/Devicez.png" alt="Devicez Background" class="brand-bg">
+                        <img src="kubick logos brands/Devicez Logo 1.png" alt="Devicez Logo"
+                            class="brand-logo-floating">
+                    </div>
                     <div class="brand-info">
                         <h3>Devicez</h3>
                         <a href="#" class="btn-outline">LEARN MORE</a>
@@ -194,7 +217,7 @@
     <section id="contact" class="contact">
         <div class="contact-left">
             <div class="contact-left-content">
-                <h2>We'd love<br>to hear<br>from you...</h2>
+                <h2>We'd love to <br> hear from you...</h2>
                 <p class="disclaimer">DISCLAIMER: By submitting an email, you agree to our <a href="#">Terms of Use</a>
                 </p>
             </div>
@@ -307,7 +330,7 @@
 
         // --- GSAP TEXT ANIMATIONS ---
         gsap.registerPlugin(ScrollTrigger);
-        
+
         // Sync Lenis scroll with ScrollTrigger
         lenis.on('scroll', ScrollTrigger.update);
         gsap.ticker.add((time) => {
