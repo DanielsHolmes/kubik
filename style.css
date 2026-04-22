@@ -1,10 +1,24 @@
+@font-face {
+    font-family: 'ESKlarheitGrotesk';
+    src: url('ESKlarheithGrotesk font/ESKlarheitGrotesk-Md.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ESKlarheitGrotesk';
+    src: url('ESKlarheithGrotesk font/ESKlarheitGrotesk-Xbd.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 :root {
     --brand-green: #6BEA9D;
     --dark-charcoal: #2A2C34;
     --light-green: #D7F9E3;
     --text-white: #FFFFFF;
     --text-dark: #1E1E1E;
-    --font-main: 'Space Grotesk', sans-serif;
+    --font-main: 'ESKlarheitGrotesk', sans-serif;
 }
 
 * {
@@ -535,6 +549,25 @@ h2 {
 
 .footer-pipe {
     margin: 0 0.5rem;
+}
+
+/* Responsive Brands movil*/
+@media (max-width: 768px) {
+    .filter-category {
+        width: 100%;
+    }
+
+    #brands .filters button:last-child {
+        width: 100%;
+    }
+
+    #brands .filter-btn.active {
+        width: 50%;
+    }
+
+    .brand-card {
+        margin: 0px 30px;
+    }
 }
 
 /* Responsive Variables */
